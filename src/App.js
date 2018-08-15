@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { createStore } from 'redux';
 
-const counter = (state = 0, action) => {
-  switch(action.type) {
-    case "ADD-ONE":
+function counter(state = 0, action) {
+  switch (action.type) {
+    case "INCREMENT":
       return state + 1;
-    case "SUBTRACT-ONE":
+    case "DECREMENT":
       return state - 1;
     default:
       return state;
@@ -14,33 +14,28 @@ const counter = (state = 0, action) => {
 
 let store = createStore(counter);
 
-class App extends Component {
+store.subscribe(() => {
+  let count = store.getState();
+  console.log(count);
+});
 
-  constructor() {
-    super();
-    store.subscribe(() => {
-      console.log(store.getState);
-    });
-  }
+function increment() {
+  store.dispatch({type: "INCREMENT"});
+}
 
-  increment() {
-    store.dispatch({type: "ADD-ONE", data: "added one" });
-  }
+function decrement() {
+  store.dispatch({type: "DECREMENT"});
+}
 
-  decrement() {
-    store.dispatch({type: "SUBTRACT-ONE", data: "subtracted one"});
-  }
-  
+export default class App extends Component {
   render() {
     return (
       <div>
-        <div>Simple Redux Counter</div>
-        <button onClick={this.increment}>Increment</button>
-        <button onClick={this.decrement}>Decrement</button>
-        <p>{counter}</p>
+        React counter
+        <button onClick={increment}>Increment</button>
+        <button onClick={decrement}>Decrement</button>
+        <p>0</p>
       </div>
-    );
+    )
   }
 }
-
-export default App;
