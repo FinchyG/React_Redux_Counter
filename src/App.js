@@ -13,10 +13,11 @@ function counter(state = 0, action) {
 }
 
 let store = createStore(counter);
+let count;
 
 store.subscribe(() => {
-  let count = store.getState();
-  console.log(count);
+  count = store.getState();
+  document.getElementById("show_count").innerHTML = count;
 });
 
 function increment() {
@@ -27,15 +28,15 @@ function decrement() {
   store.dispatch({type: "DECREMENT"});
 }
 
-export default class App extends Component {
-  render() {
+const App = () => {
     return (
       <div>
         React counter
         <button onClick={increment}>Increment</button>
         <button onClick={decrement}>Decrement</button>
-        <p>0</p>
+        <p id="show_count"></p>
       </div>
     )
-  }
 }
+
+export default App;
