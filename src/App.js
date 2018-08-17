@@ -33,10 +33,9 @@ class App extends Component {
     render() {
       return (
         <div>
-          React counter
-          <button onClick={increment}>Increment</button>
-          <button onClick={decrement}>Decrement</button>
-          <p id="show_count"></p>
+          <button onClick={increment}>+</button>
+          <button onClick={decrement}>-</button>
+          <p id="show_count">0</p>
         </div>
       )
     }

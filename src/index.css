@@ -1,27 +1,46 @@
-html, 
-body{
-  height: 100%;
+@font-face {
+    
+  font-family: 'digital_dismayregular';
+  src: url('fonts/digital_dismay-webfont.woff2') format('woff2'),
+       url('fonts/digital_dismay-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
 
-body{
-  font: 20px sans-serif;
-  background: #333;
-  color: #eee;
-  display: flex;
-  justify-content: center;
-  align-items: center;    
+@font-face {
+
+  font-family: 'future_earthregular';
+  src: url('fonts/future-earth-webfont.woff2') format('woff2'),
+       url('fonts/future-earth-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
 
-.redux{
-  background: yellowgreen;
+div {
+  width: 50%;
+  margin: 1em auto;
+}
+
+#show_count {
+  width: 25%;
+  margin: auto;
   text-align: center;
-  padding: .1em;
+  font-family: 'digital_dismayregular';
+  font-size: 2em;
+  padding: 1em;
+  border: 0.1em solid black;
+  border-radius: 2em;
+  background-color: rgb(195, 197, 201);
+}
 
-  button {
-    margin: .2em;
-    padding: 1em;    
-    font-size: 120%;
-    min-width: 3em;
-    cursor: pointer;
-  }  
+button {
+  font-family: future_earthregular;
+  font-size: 2em;
+  display: block;
+  width: 75%;
+  margin: 1em auto;
+  border: 0.1em solid black;
+  border-radius: 2em;
 }
