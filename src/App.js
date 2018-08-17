@@ -28,15 +28,18 @@ function decrement() {
   store.dispatch({type: "DECREMENT"});
 }
 
-const App = () => {
-    return (
-      <div>
-        React counter
-        <button onClick={increment}>Increment</button>
-        <button onClick={decrement}>Decrement</button>
-        <p id="show_count"></p>
-      </div>
-    )
+class App extends Component {
+
+    render() {
+      return (
+        <div>
+          React counter
+          <button onClick={increment}>Increment</button>
+          <button onClick={decrement}>Decrement</button>
+          <p id="show_count"></p>
+        </div>
+      )
+    }
 }
 
 export default App;
